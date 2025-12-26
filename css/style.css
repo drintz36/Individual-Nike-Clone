@@ -1,0 +1,13 @@
+/* Hide search input under 1200px */
+@media (max-width: 1199px) {
+  input[placeholder="Search"] {
+    display: none !important;
+  }
+}
+
+/* Show search input at 1200px and above */
+@media (min-width: 1200px) {
+  input[placeholder="Search"] {
+    display: block !important;
+  }
+}
