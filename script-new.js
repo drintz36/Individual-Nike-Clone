@@ -44,14 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const pageOverlay = document.getElementById('page-overlay');
+
     function openDropdown(el) {
         el.classList.remove('opacity-0', 'invisible', '-translate-y-3');
         el.classList.add('opacity-100', 'visible', 'translate-y-0');
+        if (pageOverlay) {
+            pageOverlay.classList.remove('opacity-0', 'invisible');
+            pageOverlay.classList.add('opacity-100', 'visible');
+        }
     }
 
     function closeDropdown(el) {
         el.classList.remove('opacity-100', 'visible', 'translate-y-0');
         el.classList.add('opacity-0', 'invisible', '-translate-y-3');
+        if (pageOverlay) {
+            // Only hide overlay if no other dropdowns are active, 
+            // but the logic relies on activeDropdown being managed in the event listeners.
+            // Since closeDropdown is called on mouseleave, we want to hide it.
+            // If the user moves to another item, openDropdown will be called immediately after.
+            pageOverlay.classList.remove('opacity-100', 'visible');
+            pageOverlay.classList.add('opacity-0', 'invisible');
+        }
     }
 
     // Navbar Scroll Behavior
