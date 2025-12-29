@@ -67,4 +67,34 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.remove('opacity-100', 'visible', 'translate-y-0');
         el.classList.add('opacity-0', 'invisible', '-translate-y-3');
     }
+
+    // Product Carousel Scroll
+    const scrollContainer = document.getElementById('product-scroll-container');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    if (scrollContainer && prevBtn && nextBtn) {
+        const updateButtons = () => {
+            // Disable prev button if at start
+            prevBtn.disabled = scrollContainer.scrollLeft <= 5;
+
+            // Check if at end (with tolerance)
+            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            nextBtn.disabled = Math.ceil(scrollContainer.scrollLeft) >= maxScroll - 5;
+        };
+
+        scrollContainer.addEventListener('scroll', updateButtons);
+        // Initial state
+        setTimeout(updateButtons, 100); // Small delay to ensure layout is ready
+
+        prevBtn.addEventListener('click', () => {
+            const scrollAmount = scrollContainer.firstElementChild.clientWidth + 12; // width + margin
+            scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const scrollAmount = scrollContainer.firstElementChild.clientWidth + 12; // width + margin
+            scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
 });
