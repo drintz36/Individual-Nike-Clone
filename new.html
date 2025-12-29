@@ -655,7 +655,8 @@
                 </div>
             </div>
             <!-- Shop navigation -->
-            <div class="flex justify-center items-center w-full h-[60px] bg-[rgb(245,245,245)] font-[540]">
+            <div id="shop-nav"
+                class="flex justify-center items-center w-full h-[60px] bg-[rgb(245,245,245)] font-[540] transition-all duration-300">
                 <p class="text-[#111111] text-[14px] px-[8px] font-[helvetica]">Shop All New Arrivals <span
                         class="underline text-[#111111] text-[12px] font-[helvetica] px-[8px]">Shop</span></p>
             </div>
@@ -664,14 +665,16 @@
     <!-- Main -->
     <main>
         <!-- Title -->
-        <div class="flex items-center my-[15px] h-[51px] px-[48px] pb-[15px] justify-between">
+        <div id="title-bar"
+            class="flex flex-col md:flex-row md:items-center my-[15px] h-auto md:h-[51px] px-6 md:px-[48px] pb-[15px] justify-between bg-white transition-all duration-300 sticky top-0 z-20">
             <!-- Right -->
-            <p class="text-[#111111] text-[24px] font-[helvetica]">New Trainers & Gear (1101)</p>
+            <p class="text-[#111111] text-[18px] md:text-[24px] font-[helvetica] w-full md:w-auto mb-2 md:mb-0">New
+                Trainers & Gear (1101)</p>
             <!-- Left -->
-            <div class="flex items-center">
+            <div class="flex items-center justify-between w-full md:w-auto">
                 <!-- Hide Filter -->
                 <div class="flex items-center pr-[25px]">
-                    <p class="pr-[8px] text-[16px] font-[helvetica] text-[#111111]">Hide Filters</p>
+                    <p class="pr-[8px] text-[14px] md:text-[16px] font-[helvetica] text-[#111111]">Hide Filters</p>
                     <svg aria-hidden="true" class="icon-filter-ds" focusable="false" viewBox="0 0 24 24" role="img"
                         width="24px" height="24px" fill="none">
                         <path stroke="currentColor" stroke-width="1.5" d="M21 8.25H10m-5.25 0H3"></path>
@@ -684,7 +687,7 @@
                 </div>
                 <!-- Sort by -->
                 <div class="flex items-center cursor-pointer">
-                    <p class="px-[6px] text-[16px] font-[helvetica]">Sort By</p>
+                    <p class="px-[6px] text-[14px] md:text-[16px] font-[helvetica]">Sort By</p>
                     <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="20px" height="20px"
                         fill="none">
                         <path stroke="currentColor" stroke-width="1.5" d="M5.5 8.5l6.5 6.5 6.5-6.5"></path>
@@ -695,7 +698,7 @@
         <!-- Product New -->
         <div class="flex">
             <!-- Sidebar -->
-            <div class="w-[260px] pl-12">
+            <div id="sidebar" class="w-[260px] pl-12 sticky top-[81px] self-start h-[calc(100vh-81px)] overflow-y-auto">
                 <!-- Category Links -->
                 <div class="flex flex-col gap-[10px] pb-[40px]">
                     <a href="#"
@@ -827,9 +830,9 @@
                 </div>
             </div>
             <!-- Products Card -->
-            <div class="flex-1 px-12">
-                <!-- 3 Column Grid -->
-                <div class="grid grid-cols-3 gap-[16px]">
+            <div class="flex-1 px-4 md:px-12">
+                <!-- Grid -->
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-[8px] md:gap-[16px]">
                     <!-- Product Card 1 -->
                     <div class="product-card">
                         <a href="#" class="block">
@@ -909,7 +912,7 @@
                         </a>
                     </div>
 
-                    <!-- Promo Banner - Spans 2 columns next to card 4 -->
+                    <!-- card 2column -->
                     <div class="col-span-2 relative">
                         <div class="relative w-full h-[500px] overflow-hidden">
                             <img src="./img/product-card2col.jpg" alt="All Sculpt No Sweat"
@@ -927,9 +930,191 @@
                         </div>
                     </div>
                 </div>
+                <!-- Related -->
+                <div class="w-full flex flex-col mt-[10px]">
+                    <p
+                        class="h-[84px] pt-[60px] text-[16px] md:text-[20px] text-[#111111] font-[helvetica] border-t-[1px] border-[#e5e5e5]">
+                        Related Categories</p>
+                    <div class="flex flex-wrap gap-[8px] mt-[25px] pb-[40px]">
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Men's Lifestyle Shorts</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Men's Shoes</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">Basketball
+                            New Releases</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Football Shoes</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Women's Lifestyle Shoes</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Women's Basketball Shoes</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">New
+                            Basketball Shoes</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">Women's
+                            Products</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">Skateboarding
+                            New Releases</a>
+                        <a href="#"
+                            class="px-[20px] py-[8px] border border-[#ccc] rounded-full text-[12px] font-[helvetica] text-[#111111] hover:border-[#111111] transition-colors">Running
+                            New Releases</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 md:px-12 pb-12 bg-white mt-[50px]">
+        <!-- Main Footer Content -->
+        <div
+            class="flex flex-col md:flex-row justify-between items-start mb-[72px] px-0 w-full border-t border-[#E5E5E5] pt-[60px]">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-8 lg:gap-12 w-full lg:w-[85%]">
+
+                <!-- Column 1: Resources -->
+                <div class="flex flex-col border-b border-[#E5E5E5] md:border-none">
+                    <div class="flex justify-between items-center py-6 md:py-0">
+                        <h4 class="font-medium text-[14px] text-black tracking-wide md:mb-[24px]">Resources</h4>
+                        <svg class="block md:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-3">
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Find a Store</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Nike Journal</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Become a Member</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Feedback</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Promo Codes</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Product Advice</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Running Shoe Finder</a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Help -->
+                <div class="flex flex-col border-b border-[#E5E5E5] md:border-none">
+                    <div class="flex justify-between items-center py-6 md:py-0">
+                        <h4 class="font-medium text-[14px] text-black tracking-wide md:mb-[24px]">Help</h4>
+                        <svg class="block md:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-3">
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Get Help</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Order Status</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Shipping and Delivery</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Returns</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Payment Options</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Contact Us</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Reviews</a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="flex flex-col border-b border-[#E5E5E5] md:border-none">
+                    <div class="flex justify-between items-center py-6 md:py-0">
+                        <h4 class="font-medium text-[14px] text-black tracking-wide md:mb-[24px]">Company</h4>
+                        <svg class="block md:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-3">
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">About Nike</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">News</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Careers</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Investors</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Sustainability</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Purpose</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Nike Coaching</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Report a concern</a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Community Discounts -->
+                <div class="flex flex-col border-b border-[#E5E5E5] md:border-none">
+                    <div class="flex justify-between items-center py-6 md:py-0">
+                        <h4 class="font-medium text-[14px] text-black tracking-wide md:mb-[24px]">Community Discounts
+                        </h4>
+                        <svg class="block md:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="hidden md:flex flex-col gap-3">
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Student</a>
+                        <a href="#" class="text-[#707072] text-[14px] font-medium">Teacher</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Locale Selector (Top Right desktop, Bottom left mobile) -->
+            <div
+                class="flex items-center gap-2 text-[#707072] mt-4 md:mt-0 whitespace-nowrap w-full md:w-auto border-b border-[#E5E5E5] pb-6 md:border-none md:pb-0">
+                <svg aria-hidden="true" class="h-4 w-4" focusable="false" viewBox="0 0 24 24" role="img" width="24px"
+                    height="24px" fill="none">
+                    <path stroke="currentColor" stroke-width="1.5"
+                        d="M21.75 12a9.75 9.75 0 11-19.5 0 9.75 9.75 0 0119.5 0zM12 2.25c4.142 0 7.5 4.365 7.5 9.75s-3.358 9.75-7.5 9.75S4.5 17.385 4.5 12 7.858 2.25 12 2.25zm0 9.75h9.75m-9.75 0H2.25m9.75 0V2.25m0 9.75v9.75">
+                    </path>
+                </svg>
+                <span class="text-[12px] font-medium">South Africa</span>
+            </div>
+        </div>
+
+        <div class="mt-[40px] md:mt-[72px] h-auto md:min-h-[73px] pb-12 w-full px-0 md:px-0">
+            <div
+                class="flex flex-col md:flex-row md:flex-wrap justify-start items-start md:items-end gap-4 md:gap-x-6 md:gap-y-2">
+
+                <!-- Copyright -->
+                <div class="flex whitespace-nowrap">
+                    <p class="text-[14px] text-[#707072]">© 2025 Nike, Inc. All rights reserved</p>
+                </div>
+
+                <!-- Legal Links -->
+                <div
+                    class="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-x-6 md:gap-y-2 items-start md:items-center w-full md:w-auto">
+                    <!-- Guides Dropdown -->
+                    <div
+                        class="group relative cursor-pointer flex items-center gap-1 text-[#707072] hover:text-black transition-colors">
+                        <p class="text-[14px] font-medium">Guides</p>
+                        <svg aria-hidden="true" class="w-4 h-4 transition-transform group-hover:rotate-180"
+                            focusable="false" viewBox="0 0 24 24" role="img" fill="none">
+                            <path stroke="currentColor" stroke-width="1.5" d="M17.5 9.25l-5.5 5.5-5.5-5.5"></path>
+                        </svg>
+                    </div>
+
+                    <a href="#"
+                        class="text-[14px] text-[#707072] hover:text-black transition-colors whitespace-nowrap">Terms of
+                        Use</a>
+                    <a href="#"
+                        class="text-[14px] text-[#707072] hover:text-black transition-colors whitespace-nowrap">Terms of
+                        Sale</a>
+                    <a href="#"
+                        class="text-[14px] text-[#707072] hover:text-black transition-colors whitespace-nowrap">Company
+                        Details</a>
+                    <a href="#"
+                        class="text-[14px] text-[#707072] hover:text-black transition-colors whitespace-nowrap">Privacy
+                        &
+                        Cookie Policy</a>
+                    <a href="#"
+                        class="text-[14px] text-[#707072] hover:text-black transition-colors whitespace-nowrap">Privacy
+                        &
+                        Cookie Setting</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <script src="./script-new.js"></script>
 </body>
 
