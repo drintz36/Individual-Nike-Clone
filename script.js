@@ -68,6 +68,48 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('opacity-0', 'invisible', '-translate-y-3');
     }
 
+    // Navbar Scroll Behavior - Hide top nav and make main nav sticky on scroll
+    const topNav = document.getElementById('top-nav');
+    const mainNav = document.getElementById('main-nav');
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+    const topNavHeight = 36; // Height of top nav
+
+    if (topNav && mainNav) {
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > topNavHeight) {
+                // Scrolled past top nav - hide it and make main nav sticky
+                topNav.style.height = '0px';
+                topNav.style.overflow = 'hidden';
+                topNav.style.opacity = '0';
+                mainNav.style.position = 'fixed';
+                mainNav.style.top = '0';
+                mainNav.style.left = '0';
+                mainNav.style.right = '0';
+                mainNav.style.zIndex = '1000';
+                mainNav.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                // Add padding to body to prevent content jump
+                document.body.style.paddingTop = '60px';
+            } else {
+                // At top - show top nav and reset main nav
+                topNav.style.height = '36px';
+                topNav.style.overflow = '';
+                topNav.style.opacity = '1';
+                mainNav.style.position = '';
+                mainNav.style.top = '';
+                mainNav.style.left = '';
+                mainNav.style.right = '';
+                mainNav.style.zIndex = '';
+                mainNav.style.boxShadow = '';
+                document.body.style.paddingTop = '';
+            }
+
+            lastScrollY = currentScrollY;
+        });
+    }
+
     // Product Carousel Scroll
     const scrollContainer = document.getElementById('product-scroll-container');
     const prevBtn = document.getElementById('prev-btn');

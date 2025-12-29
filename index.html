@@ -17,7 +17,8 @@
   <header class="w-full h-[96px]">
     <nav class="flex flex-col bg-[rgb(245,245,245)]">
       <!-- top nav -->
-      <div class="h-[36px] w-full items-center my-[auto] mx-auto justify-center hidden md:flex">
+      <div id="top-nav"
+        class="h-[36px] w-full items-center my-[auto] mx-auto justify-center hidden md:flex transition-all duration-300">
         <div class="flex justify-between w-full px-[48px] max-w-[1920px]">
           <!-- content inside right-->
           <div class="flex items-center">
@@ -48,7 +49,8 @@
         </div>
       </div>
       <!-- main navigation -->
-      <div class="h-[60px] w-full flex items-center my-auto mx-auto justify-center bg-white">
+      <div id="main-nav"
+        class="h-[60px] w-full flex items-center my-auto mx-auto justify-center bg-white transition-all duration-300">
         <div class="flex justify-between w-full max-w-[1920px] items-center px-[24px] md:pr-[48px] md:pl-[44px]">
           <!-- Left navigation -->
           <div>
@@ -884,16 +886,18 @@
       </div>
     </div>
 
-    <div class="mt-[40px] md:mt-[72px] h-auto md:h-[73px] pb-12 w-full px-0 md:px-0">
-      <div class="flex flex-col md:flex-row justify-start items-start md:items-end gap-4 md:gap-6">
+    <div class="mt-[40px] md:mt-[72px] h-auto md:min-h-[73px] pb-12 w-full px-0 md:px-0">
+      <div
+        class="flex flex-col md:flex-row md:flex-wrap justify-start items-start md:items-end gap-4 md:gap-x-6 md:gap-y-2">
 
         <!-- Copyright -->
-        <div class="flex">
+        <div class="flex whitespace-nowrap">
           <p class="text-[14px] text-[#707072]">© 2025 Nike, Inc. All rights reserved</p>
         </div>
 
         <!-- Legal Links -->
-        <div class="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-6 items-start md:items-center w-full md:w-auto">
+        <div
+          class="flex flex-col md:flex-row md:flex-wrap gap-4 md:gap-x-6 md:gap-y-2 items-start md:items-center w-full md:w-auto">
           <!-- Guides Dropdown -->
           <div
             class="group relative cursor-pointer flex items-center gap-1 text-[#707072] hover:text-black transition-colors">
